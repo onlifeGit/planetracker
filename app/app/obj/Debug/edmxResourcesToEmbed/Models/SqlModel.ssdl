@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SqlModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Logs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="Method" Type="nvarchar(max)" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="Stack" Type="nvarchar(max)" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubscriptionCompanies">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubscriptionFlights">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FlightId" Type="nvarchar(max)" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="LName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="MName" Type="nvarchar" MaxLength="100" />
+    <Property Name="BDay" Type="datetime" />
+    <Property Name="Gender" Type="bit" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TwitterId" Type="int" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Subscript__UserI__7C4F7684">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="SubscriptionFlights" Type="Self.SubscriptionFlights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubscriptionFlights">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Subscript__UserI__7F2BE32F">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="SubscriptionCompanies" Type="Self.SubscriptionCompanies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubscriptionCompanies">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SqlModelStoreContainer">
+    <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubscriptionCompanies" EntityType="Self.SubscriptionCompanies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubscriptionFlights" EntityType="Self.SubscriptionFlights" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Subscript__UserI__7C4F7684" Association="Self.FK__Subscript__UserI__7C4F7684">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="SubscriptionFlights" EntitySet="SubscriptionFlights" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Subscript__UserI__7F2BE32F" Association="Self.FK__Subscript__UserI__7F2BE32F">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="SubscriptionCompanies" EntitySet="SubscriptionCompanies" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

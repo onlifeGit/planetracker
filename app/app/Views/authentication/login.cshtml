@@ -1,0 +1,46 @@
+﻿<body style="background-image:url(/asset/Content/image/autorize_fon.jpg)" >
+    <div class="autorization">
+        <form action="/authentication/login" method="post">
+            <div style="text-align:center; font-size:20px" class="span_modals"><span>Авторизація</span></div>
+            <div style="height:20px;"></div>
+            <div class="group">
+                <input class="inputs" type="text" value="" name="login" onchange="this.setAttribute('value', this.value)" ;>
+                <label for="name">Електронна пошта<span class="required"></span></label>
+                <span class="bar"></span>
+            </div>
+
+            <div class="group">
+                <input class="inputs" type="password" value="" name="password" onchange="this.setAttribute('value', this.value)" ;>
+                <label for="name">Пароль<span class="required"></span></label>
+            </div>
+            <span style="color:red">
+                @{
+                    if (ViewBag.Message != null)
+                    {
+                        @ViewBag.Message;
+                    }
+                }
+            </span>
+            <!--<div class="a_remember_psw"><a href="#" class="modal_4">Нагадати пароль</a></div>-->
+            <div class="buttons">
+                <input class="btn_standart btn_log" value="Увійти" type="submit">
+                @*<input class="btn_standart btn_autorise_cancel" value="Відмінити" type="button">*@
+                <a  href="http://localhost:55276/home/index" >
+                    <input class="btn_standart btn_autorise_cancel" value="Відмінити" type="button">
+                </a>
+                           
+            </div>
+        </form>
+    </div>
+
+    <div class="modal_remember_psw">
+        <div class="span_modals"><span>Нагадати пароль</span></div>
+        <div class="group">
+            <input class="inputs" type="text" value="" onchange="this.setAttribute('value', this.value);">
+            <label for="name">email<span></span></label>
+            <input class="buttons btn_standart" type="button" value="Нагадати">
+        </div>
+
+        <span class="modal_close">X</span>
+    </div>
+</body>

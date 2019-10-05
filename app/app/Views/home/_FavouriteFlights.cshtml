@@ -1,0 +1,55 @@
+﻿@model app.ViewModel.FavouriteFlightsVM
+
+@if (Model != null)
+{
+    <div class="no_result2" style="font-size:20px; text-align:center">Мої підписки</div>
+    <div class="no_result2" style="text-align: center; height:15px">
+        <div class='selectBox'>
+            <span class='selected'>Авіакомпанії</span>
+            <span class='selectArrow'>▼</span>
+            <div class="selectOptions fav_company">
+
+                @{ try
+                    {
+                        for (int i = 0; i < Model.Companies.Count; i++)
+                        {
+                            <span id="@i">@Model.Companies[i]</span> <br />
+
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        <span id="0"> </span> <br />
+                    }
+                }
+            </div>
+        </div>
+
+        <div class='selectBox'>
+            <span class='selected'>Авіарейси</span>
+            <span class='selectArrow'>▼</span>
+            <div class="selectOptions fav_race">
+
+                @{ try
+                    {
+                        for (int i = 0; i < Model.Flights.Count; i++)
+                        {
+                            <span id="@i">@Model.Flights[i]</span> <br />
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        <span id="0"> </span> <br />
+                    }
+                }
+            </div>
+        </div>
+    </div>
+                    }
+                    else
+                    {
+                        <div class="time">
+                            <span style="color:red; margin-left:20px" class="no_result">Оброблюється відповідь...</span>
+                            <span style="color:red; margin-left:20px" class="no_result">Спробуйте пізніше</span>
+                        </div>
+                    }

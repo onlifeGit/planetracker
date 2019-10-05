@@ -1,0 +1,8 @@
+D:\Projects\PlaneTracker\app\Features\bin\Debug\Features.dll
+D:\Projects\PlaneTracker\app\Features\bin\Debug\Features.pdb
+D:\Projects\PlaneTracker\app\Features\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\PlaneTracker\app\Features\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\PlaneTracker\app\Features\obj\Debug\Features.csprojResolveAssemblyReference.cache
+D:\Projects\PlaneTracker\app\Features\obj\Debug\Features.csproj.CoreCompileInputs.cache
+D:\Projects\PlaneTracker\app\Features\obj\Debug\Features.dll
+D:\Projects\PlaneTracker\app\Features\obj\Debug\Features.pdb

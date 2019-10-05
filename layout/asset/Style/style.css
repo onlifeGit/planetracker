@@ -1,0 +1,565 @@
+/*------------   GENERAL   ------------*/
+html, body {
+    min-width: 800px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: MyRobotoRegular;
+}
+
+.inputs {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+    width: 200px;
+    background: #fefefe;
+    font-size: .875em;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px #ccc;
+    display: inline-block;
+    overflow-y: hidden;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.btn_standart {
+    opacity: 0.6;
+
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1982A5', endColorstr='#1982A5', GradientType=0);*/
+
+    font-size: 18px;
+    font-family: 'MyRobotoRegular', Arial, Verdana, Tahoma, sans-serif;
+    color: white;
+
+    background-color: #3BA4C7;
+    background-image: -moz-linear-gradient(top, #3BA4C7 0%, #1982A5 100%);
+    background-image: -o-linear-gradient(top, #3BA4C7 0%, #1982A5 100%);
+    background-image: -ms-linear-gradient(top, #3BA4C7 0%, #1982A5 100%);
+    background-image: linear-gradient(top, #3BA4C7 0%, #1982A5 100%);
+
+    border: solid 1px #004F72;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+
+    box-shadow: 0px 0px 2px #faf0f0, inset 0px 0px 1px #ffffff;
+    -webkit-box-shadow: 0px 0px 2px #faf0f0, inset 0px 0px 1px #ffffff;
+    -moz-box-shadow: 0px 0px 2px #faf0f0, inset 0px 0px 1px #ffffff;
+
+    /*font-weight: bold;*/
+    /*margin-left: 20px;*/
+    /*text-decoration: none;*/
+    /*text-align: center;*/
+    /*padding: 11px 32px;*/
+}
+
+.group > .inputs {
+    margin-bottom: 20px;
+}
+
+.modal_close {
+    color: black;
+    width: 21px;
+    height: 21px;
+    top: 5px;
+    right: 5px;
+    display: block;
+    position: absolute;
+    text-align: center;
+     font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+}
+
+a {
+    /*float: right;*/
+    font-size: 12px;
+}
+
+.overlay {
+    z-index: 3;
+    position: fixed;
+    background-color: #000;
+    opacity: 0.5;
+    -moz-opacity: 0.8;
+    filter: alpha(opacity=80);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    text-align: center;
+}
+
+.title_modals {
+    display: table;
+    margin: auto;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.group {
+    position: relative;
+    display: table;
+    margin: auto;
+}
+
+.buttons_block {
+    display: table;
+    margin: 0 auto;
+}
+
+/*------------   HEADER   ------------*/
+.header {
+    width: 100%;
+    height: 30px;
+    /*opacity: 0.8;*/
+    display: block;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#4361a9, #6d72cb);
+    background: -o-linear-gradient(#fff, #999);
+    padding: 10px;
+}
+
+.search_header {
+    /*width: 70%;*/
+    padding: 0 20px 0 20px;
+    float: left;
+}
+
+.field_search {
+    height: 25px;
+    margin: 0 0 5px 20px;
+}
+
+.icons_header {
+    /*width: 20%;*/
+    padding: 0 20px 0 20px;
+    float: right;
+    margin-right: 30px;
+    display: block;
+}
+
+.icons_header > a {
+    margin: 0 20px 0 20px;
+}
+
+.icon_box > a {
+    margin-left: 40px;
+}
+
+.icon_box {
+    margin: 0 10px 0 10px;
+    width: 100px;
+    height: 100%;
+    float: right;
+    /*box-shadow: 0 0 10px 5px rgba(0,0,0,0.2);*/
+}
+
+.icon_box:hover{
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+    /* Убираю маркеры у списка*/
+    list-style: none;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    float: right;
+}
+
+ul.mmenuu > li > a {
+    /* Делаю элементы блочными: */
+    display: block;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    background-color: #da570f;
+}
+
+ul.mmenuu > li > a:hover {
+    /* Задаю цвет при наведении. */
+    background-color: #eb9316;
+}
+
+ul.ssubmenuu > li {
+    /* Блочное расположение элементов*/
+    display: none;
+}
+
+li > a {
+    /* Делаю элементы блочными. */
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    color: #ffffff;
+    background-color: #da570f;
+}
+li > a:hover {
+    /* Цвет бэкграунда при наведении. */
+    background-color: #eb9316;
+}
+
+ul.mmenuu > li:hover {
+    /* Делаю элементы блочными. */
+    display: block;
+}
+
+ul.mmenuu > li {
+    /* Считаем координаты относительно исходного места*/
+    position: relative;
+    width: 100px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 9;
+    top: 29px;
+    right: 10px;
+    width: 100px;
+    padding-top: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content:hover .dropdown-content {
+    display: block;
+}
+
+.icon_box:hover .dropdown-content {
+    display: block;
+}
+
+.search_header > .btn_standart {
+    opacity: 1 !important;
+    height: 29px !important;
+}
+
+img {
+    width: 20px;
+    height: 20px;
+    padding-top: 5px;
+}
+
+/*------------   MODAL AUTORIZE   ------------*/
+.autorization {
+    /*border: 3px #000 solid;*/
+    background: #CCCCFF;
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    margin-top: -150px;
+    margin-left: -150px;
+    z-index: 5;
+    padding: 20px 50px;
+    border-radius: 10px;
+}
+
+.modal_autorization {
+    /*border: 3px #000 solid;*/
+    background: #CCCCFF;
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    margin-top: -150px;
+    margin-left: -150px;
+    z-index: 5;
+    padding: 20px 50px;
+    border-radius: 10px;
+}
+
+.btn_log, btn_autorise_cancel {
+    display: table;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+/*------------   MODAL REGISTRATION   ------------*/
+.modal_registration {
+    border-radius: 10px;
+    /*border: 3px #000 solid;*/
+    background: #CCCCFF;
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    margin-top: -150px;
+    margin-left: -150px;
+    display: none;
+    opacity: 0;
+    z-index: 5;
+    padding: 20px 30px;
+}
+
+#register_ok, #register_cancel {
+    display: table;
+    margin: 0 auto;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.registrate_check_box {
+    display: table;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.a_register {
+    display: table;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.invalid_filling {
+    border: 2px solid red !important;
+}
+
+.required {
+    color: red;
+    margin-left: 5px;
+    vertical-align: 0;
+}
+
+/*------------   MODAL ABOUT   ------------*/
+.modal_about {
+    width: 450px;
+    height: 300px;
+    border-radius: 5px;
+    /*border: 3px #000 solid;*/
+    background: #CCCCFF;
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    margin-top: -150px;
+    margin-left: -150px;
+    display: none;
+    opacity: 0;
+    z-index: 5;
+    padding: 20px 30px;
+}
+
+.btn_about_ok {
+    display: table;
+    margin: 0 auto;
+    margin-top: 220px;
+}
+/*------------   MAP   ------------*/
+#map {
+    height: calc(100vh - 50px);
+}
+
+/*------------   INFO POPUP   ------------*/
+.container {
+    position: relative;
+    /*height: 100%;*/
+    width: 100%;
+    left: 0;
+    z-index: 555;
+    -webkit-transition: left 0.4s ease-in-out;
+    -moz-transition: left 0.4s ease-in-out;
+    -ms-transition: left 0.4s ease-in-out;
+    -o-transition: left 0.4s ease-in-out;
+    transition: left 0.5s ease-in-out;
+}
+
+.container.open-sidebar {
+    left: 240px;
+}
+
+#sidebar {
+    position: absolute;
+    left: -240px;
+    background: #DF314D;
+    width: 240px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.popup {
+    background: #CCCCFF;
+    z-index: 3;
+    height: calc(100vh - 50px);
+}
+
+.popup h1 {
+    text-align: center;
+}
+
+.main-content .sidebar-toggle { /*стиль кнопки шторки*/
+    margin-left: 10px;
+    background: #DF314D;
+    border-radius: 3px;
+    display: block;
+    position: relative;
+    padding: 10px 7px;
+    float: left;
+}
+
+/*------------   SELECT BOX   ------------*/
+div.selectBox {
+    position: relative;
+    display: inline-block;
+    cursor: default;
+    text-align: left;
+    line-height: 30px;
+    clear: both;
+    color: #888;
+    top: 50px;
+    padding: 0 10px 0 20px;
+}
+
+span.selected {
+    width: 167px;
+    text-indent: 20px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background: #f6f6f6;
+    overflow: hidden;
+}
+
+span.selectArrow {
+    width: 30px;
+    border: 1px solid #60abf8;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    /*-webkit-user-select: none;*/
+    /*-khtml-user-select: none;*/
+    /*-moz-user-select: none;*/
+    /*-o-user-select: none;*/
+    /*user-select: none;*/
+    background: #4096ee;
+    color: #fff;
+}
+
+span.selectArrow, span.selected {
+    position: relative;
+    float: left;
+    height: 30px;
+    z-index: 1;
+}
+
+div.selectOptions {
+    top: 28px;
+    left: 0;
+    width: 198px;
+    border: 1px solid #ccc;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    overflow: hidden;
+    background: #f6f6f6;
+    padding-top: 2px;
+    display: none;
+}
+
+span.selectOption {
+    display: block;
+    width: 80%;
+    line-height: 20px;
+    padding: 5px 10%;
+}
+
+ .selectOptions:hover {
+    color: #f6f6f6;
+    background: #4096ee;
+}
+
+/*----------  REMEMBER PASSWORD  --------*/
+.modal_remember_psw {
+    background: #CCCCFF;
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    margin-top: -150px;
+    margin-left: -150px;
+    display: none;
+    opacity: 0;
+    z-index: 5;
+    padding: 20px 50px;
+    border-radius: 10px;
+}
+
+.a_remember_psw {
+    display: table;
+    margin: auto;
+    margin-bottom: 10px;
+ }
+
+/*------------   DATEPICKER  -----------*/
+#ui-datepicker-div {
+    background-color: white;
+    border: 2px solid black;
+}
+
+/*---------------  LABEL  -------------*/
+label {
+    cursor: default;
+    /*padding: 15px;*/
+    color: #999;
+    font-size: 14px;
+    position: absolute;
+    /*pointer-events: none;*/
+    left: 10px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+input:focus ~ label {
+    top: -15px;
+    font-size: 10px;
+    color: #5264AE;
+}
+
+input:not([value=""]) ~ label {
+    top: -15px;
+    font-size: 10px;
+    color: #5264AE;
+}
+
+/*---------------  FONT-FAMILY  -------------*/
+@font-face {
+    font-family: MyRobotoRegular;
+    src: url(../Content/Fonts/Roboto-Regular.ttf);
+}
+
+#fly{
+    z-index: 9;
+}
+
+
+
+
+
+
+
+
+
+
+
+

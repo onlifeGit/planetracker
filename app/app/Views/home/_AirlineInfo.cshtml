@@ -1,0 +1,66 @@
+﻿@model app.Business.FlightAware.Models.OutputModels.AirlineInfoResult
+
+@if (Model != null)
+{
+    <div class="no_result1" style="font-size:18px; text-align:center">Інформація про компанію</div>
+        <div class="click_popup_info_race no_result1" style="text-align: center">
+
+            <div class="outer_footer">
+                <div class="inner_footer">@Model.name.ToString()</div>
+            </div>
+
+            <div class="outer_standart">
+                <div class="inner_standart">@Model.country.ToString()</div>
+            </div>
+
+            <div class="outer_standart">
+                <div class="inner_standart">@Model.location.ToString()</div>
+            </div>
+
+            <div class="outer_standart_half_first_2part">
+                <div class="inner_standart_half_first_2part">@Model.callsign.ToString()</div>
+            </div>
+
+            <div class="outer_standart_half_second_2part">
+                <div class="inner_standart_half_second_2part">@Model.shortname.ToString()</div>
+            </div>
+
+            <div class="outer_standart">
+                <div class="inner_standart">@Model.phone.ToString()</div>
+            </div>
+
+            <div class="outer_standart">
+                <div class="inner_standart">@Model.airbourne.ToString()</div>
+            </div>
+
+            <div class="outer_standart">
+                <div class="inner_standart">@Model.flights_last_24_hours.ToString()</div>
+            </div>
+
+            <div class="outer_standart">
+                <div class="inner_standart"><a href="@Model.url.ToString()">@Model.url.ToString()</a></div>
+            </div>
+
+            @{if (Model.wiki_url != string.Empty)
+                {
+                    <div class="outer_standart_last">
+                        <div class="inner_standart_last"><a href="@Model.wiki_url.ToString()" target="_blank">@Model.wiki_url.ToString()</a></div>
+                    </div>
+                }
+                else
+                {
+                    <div class="outer_standart_last">
+                        <div class="inner_standart_last">Невідомо</div>
+                    </div>
+                }
+            }
+
+        </div>
+                }
+                else
+                {
+                    <div class="time">
+                        <span style="color:red; margin-left:20px" class="no_result">Оброблюється відповідь...</span>
+                        <span style="color:red; margin-left:20px" class="no_result">Спробуйте пізніше</span>
+                    </div>
+                }

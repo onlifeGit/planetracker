@@ -1,0 +1,200 @@
+﻿@{
+    bool user = HttpContext.Current.Request.Cookies["user_login"] != null;
+}
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBigodl0O924k7EeY4-s27w8fJ9M-vguxI&callback=initMap"></script>
+<script src="~/asset/Scripts/map.js"></script>
+
+<div class="header">
+    <div class="search_header">
+        <input type="text" class="inputs field_search" placeholder="Пошук">
+        <input type="button" class="btn_standart found_race" value="Знайти">
+    </div>
+
+
+    <div class="icons_header ">
+        <div class="user_email" style="margin-left:-185px; color:white; float:left; position:fixed; top:14px;"></div>
+        <div class="dropdown">
+            <div class="icon_box">
+                <a href="#" class="open_autorize">
+                    <img src="/asset/Content/icons/png/icons8-Мужчина Пользователь-26.png">
+                </a>
+            </div>
+
+            <div class="dropdown-content">
+                <ul class="mmenuu ">
+                    @if (!user)
+                    {
+                        <li>
+                            <a href="#" class="open_registrate">Зареєструватись</a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("login", "authentication")" class="open_autorize">Авторизуватись</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <!--<div class="click_favorite"><a href="#" class="main-content sidebar-toggle" data-toggle=".container">favorite</a></div>-->
+                            <div class="click_favorite"><a href="#">Улюблені</a></div>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("logOut","authentication")" class="open_autorize">Вихід</a>
+                        </li>
+                    }
+                    <!--<li>
+                        <a href="#" class="main-content sidebar-toggle" data-toggle=".container">favorite</a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+
+        <div class="icon_box">
+            <a href="#" class="open_about">
+                <img src="/asset/Content/icons/png/icons8-вопросительный-знак.png">
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="sidebar">
+        <div class="popup">
+            <a href="#" data-toggle=".container"><span class="modal_close">X</span></a>
+            <div style="height:30px"></div>
+            <div class="close2"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container1">
+    <div class="sidebar">
+        <div class="popup">
+            <a href="#" data-toggle=".container1"><span class="modal_close">X</span></a>
+            <div style="height:30px"></div>
+            <!--<div><a href="#" data-toggle=".container2">Airline</a></div>-->
+            <div class="close"></div>
+            <!--<div class="airline"></div>-->
+            <div class="name" style="text-align:center"><a href="#">Airline</a></div>
+            <!--<input type="button" class="btn_standart first_popup" value="Subscribe">-->
+            <div class="subscribe_for_race" style="text-align:center"><input type="button" class="btn_standart " value="Підписатись"></div>
+            <div class="unsubscribe_for_race" style="text-align:center"><input type="button" class="btn_standart " value="Відписатись"></div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container2">
+    <div class="sidebar">
+        <div class="popup">
+            <a href="#" data-toggle=".container2"><span class="modal_close">X</span></a>
+            <div style="height:30px"></div>
+            <div class="close1"></div>
+            <!--<span>Завантаження...</span>-->
+            <div class="not_found_race"></div>
+            <div class="subscribe_for_company" style="text-align:center"><input type="button" class="btn_standart " value="Підписатись"></div>
+            <div class="unsubscribe_for_company" style="text-align:center"><input type="button" class="btn_standart " value="Відписатись"></div>
+        </div>
+    </div>
+</div>
+
+<div class="subscribes_popup">
+    <div class="sidebar_popup">
+        <div class="new_popup">
+            <a href="#" data-toggle=".subscribes_popup"><span class="modal_close">X</span></a>
+            <div class="result_popap"></div>
+        </div>
+    </div>
+</div>
+
+<div class="overlay"></div>
+
+<div class="modal_registration">
+    <div class="title_modals"><span>Реєстрація</span></div>
+    <form>
+        <div class="group">
+            <input id="name" class="inputs" name="FName" type="text" value="" onchange="this.setAttribute('value', this.value);">
+            <label for="name">Ім'я<span class="required">*</span></label>
+        </div>
+
+        <div class="group">
+            <input id="last_name" class="inputs" name="LName" type="text" value=""
+                   onchange="this.setAttribute('value', this.value);">
+            <label for="name">Прізвище<span class="required">*</span></label>
+        </div>
+
+        <div class="group">
+            <input id="middle_name" class="inputs" name="MName" type="text" value=""
+                   onchange="this.setAttribute('value', this.value);">
+            <label for="name">По-батькові</label>
+        </div>
+
+        <div class="group">
+            <input id="datepicker" class="date inputs" name="BDay" type="text" value="" data-date-format='yyyy-mm-dd'
+                   onchange="this.setAttribute('value', this.value);">
+            <label for="name">Дата</label>
+        </div>
+
+        <div class="group">
+            <input id="phone" class="inputs" name="Phone" type="text" value="" maxlength="10" minlength="10"
+                   onchange="this.setAttribute('value', this.value);">
+            <label for="name">Телефон<span class="required">*</span></label>
+        </div>
+
+        <div class="group">
+            <input id="email" class="inputs" name="Email" type="text" value="" onchange="this.setAttribute('value', this.value);">
+            <label for="name">Електронна пошта<span class="required">*</span></label>
+        </div>
+
+        <div class="group">
+            <input class="password inputs" id="psw" name="Password" type="password" value=""
+                   onchange="this.setAttribute('value', this.value);">
+            <label for="name">Пароль<span class="required">*</span></label>
+        </div>
+
+        <div class="group">
+            <input class="confirm_password inputs" id="conf_psw" type="password" value=""
+                   onchange="this.setAttribute('value', this.value);">
+            <label for="name">Підтвердження паролю<span class="required">*</span></label>
+        </div>
+
+        <div class="registrate_check_box">
+            <input type="radio" name="Gender" value="true">Чоловік
+            <input type="radio" name="Gender" value="false">Жінка
+        </div>
+    </form>
+    <div id="error_psw"></div>
+    <div id="valid"></div>
+    <div id="valid_psw"></div>
+    <div class="buttons_block">
+        <input class="btn_standart" id="register_ok" type="button" value="Зареєструватись">
+        <input class="btn_standart" id="register_cancel" type="button" value="Відмінити">
+    </div>
+    <span class="modal_close">X</span>
+</div>
+
+<div class="modal_about">
+    <div><span class="title_modals">Про нас</span></div>
+
+    <div style="text-align:center;">
+        <div style=" font-size:20px">КУРСОВА РОБОТА</div><br />
+        <div style=" font-size:15px">
+            <div>на тему: "Система відслідковування рейсів авіакомпаній"</div><br />
+            <div>Студентів групи ІК-62</div><br />
+            <div>Микитченка Богдана("Backend" частина)</div><br />
+            <div>та</div><br />
+            <div>Устинова Олексія("Frontend" частина)</div>
+        </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:20px"><a href="http://tempnamesoft-001-site2.dtempurl.com/asset/HARD_STUFF.pdf" target="_blank">Посилання на інформацію про розробників додатку</a></div>
+
+
+    <input class="btn_standart btn_about_ok" value="Закрити" type="button">
+
+    <span class="modal_close">X</span>
+</div>
+
+<div id="map"></div>

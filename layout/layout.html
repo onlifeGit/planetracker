@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+
+    <title>layout</title>
+
+    <link href="../app/app/asset/Style/style.css" rel="stylesheet"><script src="../app/app/asset/Scripts/script_lib/jquery-1.10.2.js"></script>
+
+    <script src="../app/app/asset/Scripts/script.js"></script>
+    <script src="../app/app/asset/Scripts/connector.js"></script>
+    <script src="../app/app/asset/Scripts/map.js"></script>
+
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>-->
+    <!--<script src="../app/app/asset/Scripts/script_lib/jquery.tabslideout.v1.2.js" type="text/javascript"></script>-->
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBigodl0O924k7EeY4-s27w8fJ9M-vguxI&callback=initMap"></script>
+</head>
+<body>
+<div class="header">
+    <div class="search_header">
+        <input type="text" class="inputs field_search" placeholder="Пошук">
+        <input type="button" class="btn_standart found_race" value="Знайти">
+
+        <a href="#" data-toggle=".container1">click1</a>
+        <a href="#" data-toggle=".container2">click2</a>
+        <!--<a href="#">-->
+        <!--<img src="asset/Content/icons/png/icons8-Пользователь-мужчина в кружке-64.png">-->
+        <!--</a>-->
+        <a href="#" data-toggle=".subscribes_popup">Popap</a>
+        <!--<a href="#" class="tab">Раскрыть</a>-->
+
+    </div>
+
+    <div class="icons_header ">
+        <div class="dropdown">
+
+            <div class="icon_box">
+                <a href="#" class="open_autorize">
+                    <img src="asset/Content/icons/png/icons8-Мужчина Пользователь-26.png">
+                </a>
+            </div>
+
+            <div class="dropdown-content">
+                <ul class="mmenuu ">
+                    <li>
+                        <a href="#" class="open_registrate"> registrate </a>
+                    </li>
+                    <li>
+                        <a href="http://autorization.html" class="open_autorize">autorize </a>
+                    </li>
+                    <li>
+                        <a href="#" class="main-content sidebar-toggle" data-toggle=".container">favorite</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="icon_box">
+            <a href="#" class="open_about">
+                <img src="asset/Content/icons/png/icons8-вопросительный-знак.png">
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="sidebar">
+        <div class="popup">
+            <a href="#" data-toggle=".container"><span class="modal_close">X</span></a>
+            <div class='selectBox'>
+                <span class='selected'>Авіакомпанії</span>
+                <span class='selectArrow'>▼</span>
+                <div class="selectOptions">
+                    <span id="a1">Элемент 1</span> </br>
+                    <span id="a2">Элемент 2</span> </br>
+                    <span id="a3">Элемент 3</span>
+                </div>
+            </div>
+
+            <div class='selectBox'>
+                <span class='selected'>Авіалінії</span>
+                <span class='selectArrow'>▼</span>
+                <div class="selectOptions">
+                    <span id="a4">Элемент 1</span> </br>
+                    <span id="a5">Элемент 2</span> </br>
+                    <span id="a6">Элемент 3</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container1">
+    <div class="sidebar">
+        <!--<div class="popup">-->
+
+        <!--<a href="#" data-toggle=".container1"><span class="modal_close">X</span></a>-->
+        <!--<div class="popup">-->
+            <!--<div class="close"><a href="#" data-toggle=".container1"><span class="modal_close">X</span></a></div>-->
+        <!--</div>-->
+        <!--<div style="height:30px"></div>-->
+
+        <!--<div class="click_popup_info_race">-->
+        <!--<div class="outer_footer">-->
+        <!--<div class="inner_footer"></div>-->
+        <!--<a href="#" data-toggle=".container2">Airline</a>-->
+        <!--</div>-->
+
+        <!--<div class="outer_info ">-->
+        <!--<div class="inner_info"><div class="flight_aircraft_status_detail">FLIGHT STATUS</div></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart_half_first_2part">-->
+        <!--<div class="inner_standart_half_first_2part"></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart_half_second_2part">-->
+        <!--<div class="inner_standart_half_second_2part"></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart_half_first_2part">-->
+        <!--<div class="inner_standart_half_first_2part"></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart_half_second_2part">-->
+        <!--<div class="inner_standart_half_second_2part"></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart_half_first_2part">-->
+        <!--<div class="inner_standart_half_first_2part"></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart_half_second_2part">-->
+        <!--<div class="inner_standart_half_second_2part"></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart">-->
+        <!--<div class="inner_standart"></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart_half_first_3part">-->
+        <!--<div class="inner_standart_half_first_3part"></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart_half_second_3part">-->
+        <!--<div class="inner_standart_half_second_3part"></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart_half_third_3part">-->
+        <!--<div class="inner_standart_half_third_3part"></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart_half_first_2part">-->
+        <!--<div class="inner_standart_half_first_2part"></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart_half_second_2part">-->
+        <!--<div class="inner_standart_half_second_2part"></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart">-->
+        <!--<div class="inner_standart"></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_info ">-->
+        <!--<div class="inner_info"><div class="flight_aircraft_status_detail">AIRCRAFT DETAILS</div></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart">-->
+        <!--<div class="inner_standart"></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart">-->
+        <!--<div class="inner_standart"></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart">-->
+        <!--<div class="inner_standart"></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart_half_first_3part">-->
+        <!--<div class="inner_standart_half_first_3part"></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart_half_second_3part">-->
+        <!--<div class="inner_standart_half_second_3part"></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart_half_third_3part">-->
+        <!--<div class="inner_standart_half_third_3part"></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_info ">-->
+        <!--<div class="inner_info"><div class="flight_aircraft_status_detail">FLIGHT DETAILS</div></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart">-->
+        <!--<div class="inner_standart"></div>-->
+        <!--</div>-->
+
+        <!--<div class="outer_standart_last">-->
+        <!--<div class="inner_standart_last"></div>-->
+        <!--</div>-->
+
+        <!--</div>-->
+    </div>
+</div>
+
+<div class="container2">
+    <div class="sidebar">
+        <!--<div class="popup">-->
+            <!--<a href="#" data-toggle=".container2"><span class="modal_close">X</span></a>-->
+
+            <!--<div style="height:30px"></div>-->
+
+            <!--<div class="click_popup_info_race">-->
+
+                <!--<div class="outer_footer">-->
+                    <!--<div class="inner_footer"></div>-->
+                <!--</div>-->
+
+                <!--<div class="outer_standart">-->
+                    <!--<div class="inner_standart"></div>-->
+                <!--</div>-->
+
+                <!--<div class="outer_standart_half_first_2part">-->
+                    <!--<div class="inner_standart_half_first_2part"></div>-->
+                <!--</div>-->
+
+                <!--<div class="outer_standart_half_second_2part">-->
+                    <!--<div class="inner_standart_half_second_2part"></div>-->
+                <!--</div>-->
+
+                <!--<div class="outer_standart">-->
+                    <!--<div class="inner_standart"></div>-->
+                <!--</div>-->
+
+                <!--<div class="outer_standart">-->
+                    <!--<div class="inner_standart"></div>-->
+                <!--</div>-->
+
+                <!--<div class="outer_standart">-->
+                    <!--<div class="inner_standart"></div>-->
+                <!--</div>-->
+
+                <!--<div class="outer_standart_half_first_2part">-->
+                    <!--<div class="inner_standart_half_first_2part"></div>-->
+                <!--</div>-->
+
+                <!--<div class="outer_standart_half_second_2part">-->
+                    <!--<div class="inner_standart_half_second_2part"></div>-->
+                <!--</div>-->
+
+                <!--<div class="outer_standart_last">-->
+                    <!--<div class="inner_standart_last"></div>-->
+                <!--</div>-->
+
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+
+<div class="subscribes_popup">
+    <div class="sidebar_popup">
+        <div class="new_popup">
+            <a href="#" data-toggle=".subscribes_popup"><span class="modal_close">X</span></a>
+            <span>Попап</span>
+        </div>
+    </div>
+</div>
+
+<div class="overlay"></div>
+<div class="modal_registration">
+    <div class="title_modals"><span>Реєстрація</span></div>
+    <form>
+        <div class="group">
+            <input id="name" class="inputs" name="FName" type="text" value=""
+                   onchange="this.setAttribute('value', this.value);">
+            <label for="name">Ім'я<span class="required">*</span></label>
+        </div>
+
+        <div class="group">
+            <input id="last_name" class="inputs" name="LName" type="text" value=""
+                   onchange="this.setAttribute('value', this.value);">
+            <label for="name">Прізвище<span class="required">*</span></label>
+        </div>
+
+        <div class="group">
+            <input id="middle_name" class="inputs" name="MName" type="text" value=""
+                   onchange="this.setAttribute('value', this.value);">
+            <label for="name">По-батькові</label>
+        </div>
+
+        <div class="group">
+            <input id="datepicker" class="date inputs" name="BDay" type="text" value="" data-date-format='dd-MM-yyyy'
+                   onchange="this.setAttribute('value', this.value);">
+            <label for="name">Дата</label>
+        </div>
+
+        <div class="group">
+            <input id="phone" class="inputs" name="Phone" type="text" value="" maxlength="10" minlength="10"
+                   onchange="this.setAttribute('value', this.value);">
+            <label for="name">Телефон<span class="required">*</span></label>
+        </div>
+
+        <div class="group">
+            <input id="email" class="inputs" name="Email" type="text" value=""
+                   onchange="this.setAttribute('value', this.value);">
+            <label for="name">Еmail<span class="required">*</span></label>
+        </div>
+
+        <div class="group">
+            <input class="password inputs" id="psw" name="Password" type="password" value=""
+                   onchange="this.setAttribute('value', this.value);">
+            <label for="name">Пароль<span class="required">*</span></label>
+        </div>
+
+        <div class="group">
+            <input class="confirm_password inputs" id="conf_psw" type="password" value=""
+                   onchange="this.setAttribute('value', this.value);">
+            <label for="name">Підтвердження паролю<span class="required">*</span></label>
+        </div>
+
+        <div class="registrate_check_box">
+            <input type="radio" name="Gender" value="true">Чоловік
+            <input type="radio" name="Gender" value="false">Жінка
+        </div>
+    </form>
+    <div id="error_psw"></div>
+    <div id="valid"></div>
+    <div class="buttons_block">
+        <input class="btn_standart" id="register_ok" type="button" value="Зареєструватись">
+        <input class="btn_standart" id="register_cancel" type="button" value="Відмінити">
+    </div>
+    <span class="modal_close">X</span>
+</div>
+
+
+<div class="modal_about">
+    <div><span class="title_modals">About</span></div>
+
+    <input class="btn_standart btn_about_ok" value="OK" type="button">
+
+    <span class="modal_close">X</span>
+</div>
+
+<!--<img id="fly" src="asset/Content/icons/png/icons8-Аэропорт-40.png">-->
+
+
+<div id="map"></div>
+
+</body>
+</html>
+
+
+<!--<div class="modal_remember_psw">-->
+<!--<div class="title_modals"><span>Нагадати пароль</span></div>-->
+<!--<div class="group">-->
+<!--<input class="inputs" type="text" value="" onchange="this.setAttribute('value', this.value);">-->
+<!--<label for="name">email<span></span></label>-->
+<!--<input class="buttons_block btn_standart" type="button" value="Нагадати">-->
+<!--</div>-->
+
+<!--<span class="modal_close">X</span>-->
+<!--</div>-->
+
+<!--<div class="modal_autorization">-->
+<!--<div class="title_modals"><span>Авторизація</span></div>-->
+<!--<div class="group">-->
+<!--<input class="inputs" type="text" value="" onchange="this.setAttribute('value', this.value)" ;>-->
+<!--<label for="name">Логін<span class="required"></span></label>-->
+<!--<span class="bar"></span>-->
+
+
+<!--</div>-->
+
+<!--<div class="group">-->
+<!--<input class="inputs" type="password" value="" onchange="this.setAttribute('value', this.value)" ;>-->
+<!--<label for="name">Пароль<span class="required"></span></label>-->
+<!--</div>-->
+<!--<div class="a_remember_psw"><a href="#" class="modal_4">Нагадати пароль</a></div>-->
+<!--<div class="a_register"><a href="#" class="modal_5">Реєстрація</a></div>-->
+<!--<div class="buttons_block">-->
+<!--<input class="btn_standart btn_log" value="Увійти" type="button">-->
+<!--<input class="btn_standart btn_autorise_cancel" value="Відмінити" type="button">-->
+<!--</div>-->
+<!--<span class="modal_close">X</span>-->
+<!--</div>-->
+
+

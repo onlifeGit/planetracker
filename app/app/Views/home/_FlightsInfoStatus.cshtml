@@ -1,0 +1,202 @@
+﻿@model  app.Business.FlightAware.Models.OutputModels.FlightInfoStatusResult
+
+
+@if (Model != null)
+{
+    <div class="no_result" style="font-size:18px; text-align:center">Інформація про рейс</div>
+    <div class="click_popup_info_race no_result" style="text-align: center">
+
+        <div class="outer_footer">
+            <div class="inner_footer">
+                @Model.flights.Last().airline.ToString()
+        </div>
+    </div>
+
+    <div class="outer_info ">
+        <div class="inner_info"><div class="flight_aircraft_status_detail">СТАТУС РЕЙСУ</div></div>
+    </div>
+
+    <div class="outer_standart_half_first_2part">
+        <div class="inner_standart_half_first_2part">@Model.flights.Last().actual_departure_time.time.ToString() @Model.flights.Last().actual_departure_time.date.ToString()</div>
+    </div>
+
+    <div class="outer_standart_half_second_2part">
+        <div class="inner_standart_half_second_2part">@Model.flights.Last().actual_arrival_time.time.ToString() @Model.flights.Last().actual_arrival_time.date.ToString()</div>
+    </div>
+
+    <div class="outer_standart_half_first_2part">
+        <div class="inner_standart_half_first_2part">@Model.flights.Last().estimated_departure_time.time.ToString() @Model.flights.Last().estimated_departure_time.date.ToString()</div>
+    </div>
+
+    <div class="outer_standart_half_second_2part">
+        <div class="inner_standart_half_second_2part">@Model.flights.Last().estimated_arrival_time.time.ToString() @Model.flights.Last().estimated_arrival_time.date.ToString()</div>
+    </div>
+
+    <div class="outer_standart_half_first_2part">
+        <div class="inner_standart_half_first_2part">@Model.flights.Last().departure_delay.ToString()</div>
+    </div>
+
+    <div class="outer_standart_half_second_2part">
+        <div class="inner_standart_half_second_2part">@Model.flights.Last().arrival_delay.ToString()</div>
+    </div>
+
+    <div class="outer_standart">
+        <div class="inner_standart">@Model.flights.Last().progress_percent.ToString()</div>
+    </div>
+
+    <div class="outer_standart_half_first_3part">
+        <div class="inner_standart_half_first_3part">@Model.flights.Last().diverted.ToString()</div>
+    </div>
+
+    <div class="outer_standart_half_second_3part">
+        <div class="inner_standart_half_second_3part">@Model.flights.Last().cancelled.ToString()</div>
+    </div>
+
+
+    @{if (Model.flights.Last().terminal_orig != null)
+                {
+            <div class="outer_standart_half_third_3part">
+                <div class="inner_standart_half_third_3part">@Model.flights.Last().terminal_orig.ToString()</div>
+            </div>
+        }
+        else
+        {
+            <div class="outer_standart_half_third_3part">
+                <div class="inner_standart_half_third_3part">Невідомо</div>
+            </div>
+        }
+    }
+
+    @{ if (Model.flights.Last().terminal_dest != null)
+                {
+            <div class="outer_standart_half_first_2part">
+                <div class="inner_standart_half_first_2part">@Model.flights.Last().terminal_dest.ToString()</div>
+            </div>
+        }
+        else
+        {
+            <div class="outer_standart_half_first_2part">
+                <div class="inner_standart_half_first_2part">Невідомо</div>
+            </div>
+        }
+    }
+
+
+    <div class="outer_standart_half_second_2part">
+        <div class="inner_standart_half_second_2part">@Model.flights.Last().distance_filed.ToString()</div>
+    </div>
+
+    @{if (Model.flights.LastOrDefault().dispaly_aircraft != null)
+                {
+            <div class="outer_standart">
+                <div class="inner_standart">@Model.flights.LastOrDefault().dispaly_aircraft.ToString()</div>
+            </div>
+        }
+        else
+        {
+            <div class="outer_standart">
+                <div class="inner_standart">Невідомо</div>
+            </div>
+        }
+
+    }
+
+    <div class="outer_info ">
+        <div class="inner_info"><div class="flight_aircraft_status_detail">ДЕТАЛІ ПО ЛІТАКУ</div></div>
+    </div>
+
+    <div class="outer_standart">
+        <div class="inner_standart">@Model.flights.Last().full_aircrafttype.ToString()</div>
+    </div>
+
+    <div class="outer_standart">
+        <div class="inner_standart">@Model.flights.Last().tailnumber.ToString()</div>
+    </div>
+
+    @{if (Model.flights.Last().seats_cabin_coach != null)
+                {
+            <div class="outer_standart_half_first_3part">
+                <div class="inner_standart_half_first_3part">@Model.flights.Last().seats_cabin_coach.ToString()</div>
+            </div>
+        }
+        else
+        {
+            <div class="outer_standart_half_first_3part">
+                <div class="inner_standart_half_first_3part">Невідомо</div>
+            </div>
+        }
+    }
+
+    @{if (Model.flights.Last().seats_cabin_first != null)
+                {
+            <div class="outer_standart_half_second_3part">
+                <div class="inner_standart_half_second_3part">@Model.flights.Last().seats_cabin_first.ToString()</div>
+            </div>
+        }
+        else
+        {
+            <div class="outer_standart_half_second_3part">
+                <div class="inner_standart_half_second_3part">Невідомо</div>
+            </div>
+        }
+    }
+
+    @{if (Model.flights.Last().seats_cabin_business != null)
+                {
+            <div class="outer_standart_half_third_3part">
+                <div class="inner_standart_half_third_3part">@Model.flights.Last().seats_cabin_business.ToString()</div>
+            </div>
+        }
+        else
+        {
+            <div class="outer_standart_half_third_3part">
+                <div class="inner_standart_half_third_3part">Невідомо</div>
+            </div>
+        }
+    }
+
+    <div class="outer_info ">
+        <div class="inner_info"><div class="flight_aircraft_status_detail">ДЕТАЛІ ПРО РЕЙС</div></div>
+    </div>
+
+    @{if (Model.flights.Last().filed_airspeed_mach != null)
+                {
+            <div class="outer_standart">
+                <div class="inner_standart">@Model.flights.Last().filed_airspeed_mach.ToString()</div>
+            </div>
+        }
+        else
+        {
+            <div class="outer_standart">
+                <div class="inner_standart">Невідомо</div>
+            </div>
+        }
+    }
+
+    @{if (@Model.flights.Last().filed_altitude != null)
+                {
+            <div class="outer_standart_last">
+                <div class="inner_standart_last">@Model.flights.Last().filed_altitude.ToString()</div>
+            </div>
+        }
+        else
+        {
+            <div class="outer_standart_last">
+                <div class="inner_standart_last">Невідомо</div>
+            </div>
+        }
+    }
+
+</div>
+            //<div class="airline"></div>
+        }
+        else
+        {
+            <div class="time">
+                <span style="color:red; margin-left:20px" class="no_result">Оброблюється відповідь...</span>
+                <span style="color:red; margin-left:20px" class="no_result">Спробуйте пізніше</span>
+            </div>
+
+        }
+
+

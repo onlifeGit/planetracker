@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>layout</title>
+    <link href="asset/Style/style.css" rel="stylesheet">
+
+    <script src="asset/Scripts/script_lib/jquery-1.10.2.js"></script>
+    <script src="asset/Scripts/script.js"></script>
+    <script src="asset/Scripts/connector.js"></script>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+<body>
+<div class="autorization">
+    <div class="span_modals"><span>Авторизація</span></div>
+    <div class="group">
+        <input class="inputs" type="text" value="" onchange="this.setAttribute('value', this.value)" ;>
+        <label for="name">Логін<span class="required"></span></label>
+        <span class="bar"></span>
+    </div>
+
+    <div class="group">
+        <input class="inputs" type="password" value="" onchange="this.setAttribute('value', this.value)" ;>
+        <label for="name">Пароль<span class="required"></span></label>
+    </div>
+    <div class="a_remember_psw"><a href="#" class="modal_4">Нагадати пароль</a></div>
+    <div class="buttons">
+        <input class="btn_standart btn_log" value="Увійти" type="button">
+        <input class="btn_standart btn_autorise_cancel" value="Відмінити" type="button">
+    </div>
+
+</div>
+
+<div class="modal_remember_psw">
+    <div class="span_modals"><span>Нагадати пароль</span></div>
+    <div class="group">
+        <input class="inputs" type="text" value="" onchange="this.setAttribute('value', this.value);">
+        <label for="name">email<span></span></label>
+        <input class="buttons btn_standart" type="button" value="Нагадати">
+    </div>
+
+    <span class="modal_close">X</span>
+</div>
+
+
+
+</body>
+</html>
+
+
+
