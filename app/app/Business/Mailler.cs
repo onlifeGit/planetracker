@@ -24,7 +24,7 @@ namespace app.Business
                 int port = 587;//OR 58
 
                 string login = "planetrackerteam@gmail.com";
-                string pass = "4lyW1thm3";
+                string pass = "********";
                 
                 bool ssl = true;
                 

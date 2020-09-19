@@ -216,11 +216,8 @@ namespace app.Controllers
 
             List<string> list = new List<string>();
 
-            list.Add("AUI146-1512800764-airline-0169");        //Ukraine: AUI146-1512800764-airline-0169  AUI802-1512973540-airline-0189  AUI102-1512973540-airline-0260           
-            //list.Add("AUI102-1512973540-airline-0260");        //FDB744-1512973536-airline-0061   FDB728-1512973536-airline-0495
-            list.Add("SIA321-1512973541-airline-0029");
-            //list.Add("SWA35-1491974780-airline-0046");         // USA:SWA35-1491974780-airline-0046; SWA3190-1499059584-airline-0589; 
-            //list.Add("SWA3190-1499059584-airline-0589");      //London SIA321-1512973541-airline-0029
+            list.Add("AUI146-1512800764-airline-0169");    //Ukraine: AUI146-1512800764-airline-0169       
+            list.Add("SIA321-1512973541-airline-0029");    //London SIA321-1512973541-airline-0029
 
             for (int i = 0; i < list.Count; i++)
             {
