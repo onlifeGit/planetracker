@@ -316,6 +316,7 @@
     <Content Include="asset\Content\icons\png\icons8-Мужчина Пользователь-26.png" />
     <Content Include="asset\Content\icons\png\icons8-Пользователь-мужчина в кружке-64.png" />
     <Content Include="asset\Content\icons\png\icons8-пользователь.png" />
+    <Content Include="asset\Content\image\autorize_fon.jpg" />
     <Content Include="asset\Scripts\connector.js" />
     <Content Include="asset\Scripts\map.js" />
     <Content Include="asset\Scripts\script.js" />
@@ -350,6 +351,8 @@
       <DependentUpon>SqlModel.edmx</DependentUpon>
     </Content>
     <Content Include="asset\Content\Fonts\Roboto-Regular.ttf" />
+    <None Include="Properties\PublishProfiles\planetracker - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\planetracker - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
